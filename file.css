@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Buisson.png');  /* Image de fond */
+    background-size: contain;  /* L'image ne couvre pas toute la page */
+    background-position: center;  /* Centre l'image de fond */
+    background-repeat: no-repeat;  /* Pas de répétition de l'image */
+    height: 100vh;  /* Assure que l'arrière-plan couvre toute la hauteur */
+    padding: 20px;
+    background-color: #f0f0f0;  /* Ajouter une couleur de fond si l'image ne couvre pas tout */
+}
+
+.hidden {
+    display: none;
+}
+
+#choix-container {
+    text-align: center;
+    margin: 50px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#choix-container h1 {
+    margin-bottom: 20px;
+}
+
+#choix-container button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#choix-container button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ticket-list, .demande-ticket {
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.9);  /* Fond blanc semi-transparent */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#liste-attente-client, #liste-attente-admin {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#liste-attente-client li, #liste-attente-admin li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#suivant-button, #vider-button {
+    width: 100%;
+    margin-top: 10px;
+}

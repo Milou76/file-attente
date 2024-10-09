@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File d'attente</title>
+    <link rel="stylesheet" href="file.css">
+</head>
+<body>
+    <!-- Choix du mode (Admin/Client) -->
+    <div id="choix-container">
+        <h1>Choisissez un mode</h1>
+        <button id="client-button">Mode Client</button>
+        <button id="admin-button">Mode Admin</button>
+    </div>
+
+    <!-- Interface Client -->
+    <div id="client-container" class="hidden">
+        <h1>Mode Client</h1>
+        <div class="container">
+            <!-- Section pour la liste des tickets -->
+            <div class="ticket-list">
+                <h2>Liste d'attente</h2>
+                <ul id="liste-attente-client"></ul>
+            </div>
+            <!-- Section pour faire une demande de ticket -->
+            <div class="demande-ticket">
+                <h2>Demande de Ticket</h2>
+                <form id="demande-form">
+                    <label for="nom-eleve">Nom de l'élève</label>
+                    <input type="text" id="nom-eleve" placeholder="Votre nom" required />
+                    <label for="professeur">Choisissez le professeur</label>
+                    <select id="professeur" required>
+                        <option>Mr Fouques</option>
+                        <option>Mr Adam</option>
+                        <option>Mr Metay</option>
+                        <option>Mr Flandin</option>
+                        <option>Mr Fosset</option>
+                    </select>
+                    <button type="submit" id="demander-ticket-button">Demander un ticket</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interface Admin -->
+    <div id="admin-container" class="hidden">
+        <h1>Mode Admin</h1>
+        <div class="ticket-list">
+            <h2>File d'attente</h2>
+            <ul id="liste-attente-admin"></ul>
+        </div>
+        <button id="suivant-button">Suivant</button>
+        <button id="vider-button">Vider la file d'attente</button>
+    </div>
+
+    <script src="attente.js"></script>
+</body>
+</html>
