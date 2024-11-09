@@ -1,67 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File d'attente</title>
-    <link rel="stylesheet" href="file.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'inscription</title>
+  <style>
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Full-width input fields */
+  input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 4px; /* Optional: adds rounded corners */
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Style for the horizontal line (hr) */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* General button style */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 4px; /* Optional: adds rounded corners */
+  }
+  
+  button:hover {
+    opacity: 1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    border-radius: 4px; /* Optional: adds rounded corners */
+  }
+  
+  /* Float cancel and signup buttons and make them of equal width */
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Padding for the container */
+  .container {
+    padding: 16px;
+  }
+  
+  /* Clear floats for clearfix */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Change button styles for smaller screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+      width: 100%;
+    }
+  }
+  
+  /* Textarea styles (for the "Compétences" field) */
+  textarea {
+    height: 150px; /* Set the height of the textarea */
+    resize: vertical; /* Allow resizing vertically */
+  }
+  
+
+  </style>
 </head>
 <body>
-    
-    <!-- Formulaire de connexion -->
-    <div id="login-container">
-        <h1>Connexion</h1>
-        <form id="login-form">
-            <label for="email">Adresse email</label>
-            <input type="email" id="email" placeholder="prénom.nomdefamille@lyc-buisson.com" required />
-            <button type="submit">Se connecter</button>
-            <p id="error-message" class="hidden" style="color: red;">Adresse e-mail invalide.</p>
-        </form>
-    </div>
 
-    <!-- Interface Client -->
-    <div id="client-container" class="hidden">
-        <h1 id="bienvenue-message"></h1>
-        <div class="container">
-            <!-- Section pour la liste des tickets -->
-            <div class="ticket-list">
-                <h2>Liste d'attente</h2>
-                <ul id="liste-attente-client"></ul>
-            </div>
-            <!-- Section pour faire une demande de ticket -->
-            <div class="demande-ticket">
-                <h2>Demande de Ticket</h2>
-                <form id="demande-form">
-                    <label for="nom-eleve">Nom de l'élève</label>
-                    <input type="text" id="nom-eleve" placeholder="Votre nom" required />
-                    <label for="professeur">Choisissez le professeur</label>
-                    <select id="professeur" required>
-                        <option>Prof 1</option>
-                        <option>Prof 2</option>
-                        <option>Prof 3</option>
-                        <option>Prof 4</option>
-                        <option>Prof 5</option>
-                    </select>
-                    <button type="submit" id="demander-ticket-button">Demander un ticket</button>
-                </form>
-            </div>
-        </div>
-        <button id="logout-button">Déconnexion</button>
-    </div>
+  <form action="https://sheetdb.io/api/v1/i4gzxp138f16q" method="post" id="sheetdb-form">
+    <div class="container">
+      
+      <label for="nom"><b>Nom</b></label>
+      <input type="text" placeholder="Entrez votre nom" name="data[nom]" required>
 
-    <!-- Interface Admin -->
-    <div id="admin-container" class="hidden">
-        <h1 id="admin-bienvenue-message"></h1>
-        <div class="ticket-list">
-            <h2>File d'attente</h2>
-            <ul id="liste-attente-admin"></ul>
-        </div>
-        <button id="suivant-button">Suivant</button>
-        <button id="vider-button">Vider la file d'attente</button>
-        <button id="logout-admin-button">Déconnexion</button>
-    </div>
+      <label for="note"><b>Note</b></label>
+      <input type="number" placeholder="Entrez votre note" name="data[note]" required>
 
-    <script src="attente.js"></script>
-    <script src="login.js"></script>
+      <label for="competence"><b>Compétences</b></label>
+      <textarea placeholder="Décrivez vos compétences" name="data[competence]" required></textarea>
+<br><br>
+      <div class="clearfix">
+        <button type="submit" class="envoipbtn">Envoyer</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+var form = document.getElementById("sheetdb-form");
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+}).then(
+    response => response.json()
+).then((html) => {
+    window.open("d.html", "_blank");
+    });
+});
+  </script>
+
 </body>
 </html>
