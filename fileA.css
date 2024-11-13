@@ -1,0 +1,56 @@
+/* fileA.css */
+
+#admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.demande-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#demande-admin-liste {
+    list-style-type: none;
+    padding: 0;
+}
+
+#demande-admin-liste li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#vider-file {
+    margin-top: 20px;
+    background-color: #f44336;
+}
+
+#vider-file:hover {
+    background-color: #e53935;
+}
+
+#logout-admin {
+    margin-top: 20px;
+    background-color: #f44336;
+}
+
+#logout-admin:hover {
+    background-color: #e53935;
+}

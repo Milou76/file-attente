@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File d'attente STI2D</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+    <div id="login-container">
+        <h1>Connexion</h1>
+        <form id="login-form" method="POST" action="connect.php">  <!-- Balise action pour lier au PHP -->
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="prénom.nom@lyc-buisson.com" required>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+        <div id="error-message" class="hidden" style="color: red; margin-top: 10px;">
+            Email ou mot de passe incorrect
+        </div>
+    </div>
+
+    <script src="login.js"></script> <!-- Inclure le JS qui gère la logique -->
+</body>
+</html>

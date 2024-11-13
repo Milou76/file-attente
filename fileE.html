@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Élève STI</title>
+    <link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="fileE.css">
+
+</head>
+<body>
+    
+    
+    <div id="client-container" class="hidden">
+        <div id="welcome-container">
+            <h1>Bienvenue, <span id="nom-client"></span></h1>
+        </div>
+        <div class="container">
+            <div class="form-container">
+                <form id="ticket-form">
+                    <label for="nom">Votre nom :</label>
+                    <input type="text" id="nom" required>
+                    <label for="professeur">Choisir un professeur :</label>
+                    <select id="professeur" required>
+                        <option value="fouques">Mr Fouques</option>
+                        <option value="metay">Mr Metay</option>
+                        <option value="fosset">Mr Fosset</option>
+                        <option value="flandin">Mr Flandin</option>
+                    </select>
+                    <button type="submit">Envoyer la demande</button>
+                </form>
+            </div>
+            <div class="demande-container">
+                <h2>Demandes de tickets</h2>
+                <ul id="demande-liste"></ul>
+            </div>
+        </div>
+        <button id="logout-client">Se déconnecter</button>
+    </div>
+    <script src="ecriture.js"></script>
+</body>
+</html>
